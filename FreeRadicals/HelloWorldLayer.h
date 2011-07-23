@@ -15,9 +15,13 @@
 {
   CCSprite *_nucleus;
   CCSprite *_electron;
+  BOOL charging;
+  float currentCharge;
 }
 @property (nonatomic, retain) CCSprite *electron;
 @property (nonatomic, retain) CCSprite *nucleus;
+@property (nonatomic, assign, getter=isCharging) BOOL charging;
+@property (nonatomic, assign) float currentCharge;
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;

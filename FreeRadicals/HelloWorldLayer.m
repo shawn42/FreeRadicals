@@ -15,7 +15,8 @@
 
 @synthesize electron = _electron;
 @synthesize nucleus = _nucleus;
-
+@synthesize charging;
+@synthesize currentCharge;
 
 
 +(CCScene *) scene
@@ -51,9 +52,37 @@
     [self addChild:self.nucleus];		
     [self addChild:self.electron];		
     
+    self.isTouchEnabled = YES;
+    
     [self scheduleUpdate];
   }
   return self;
+}
+
+- (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+  UITouch *touch = [touches anyObject];
+  CGPoint location = [touch locationInView:[touch view]];
+  location = [[CCDirector sharedDirector] convertToGL:location];
+  self.currentCharge = 0.0;
+  
+  CGRect nucleusRect = CGRectMake(
+     self.nucleus.position.x - (self.nucleus.contentSize.width/2), 
+     self.nucleus.position.y - (self.nucleus.contentSize.height/2), 
+     self.nucleus.contentSize.width, 
+     self.nucleus.contentSize.height);
+  
+  if (CGRectContainsPoint(nucleusRect, location)) {
+    self.charging = YES;
+  }
+  
+  
+}
+
+- (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+  if (self.charging) {
+    self.charging = NO;  
+    NSLog(@"discharge %f", currentCharge);
+  }
 }
 
 -(void) update: (ccTime) dt
@@ -61,13 +90,12 @@
   float speed = 140;
   float shellSize = 10.0;
   float shell = 2.0;
+  float chargePerSecond = 50;
 
-  float moveRads = CC_DEGREES_TO_RADIANS(speed * dt);
-    
-  float rads = ccpToAngle(ccpSub(self.electron.position, self.nucleus.position));
-  rads -= moveRads;
-  
+  float rads = ccpToAngle(ccpSub(self.electron.position, self.nucleus.position)) - CC_DEGREES_TO_RADIANS(speed * dt);  
   self.electron.position = ccpAdd(self.nucleus.position, ccp((shellSize * shell * cosf(rads)), (shellSize * shell * sinf(rads)))); 
+  
+  currentCharge += dt * chargePerSecond;
 }
 
 // on "dealloc" you need to release all your retained objects
