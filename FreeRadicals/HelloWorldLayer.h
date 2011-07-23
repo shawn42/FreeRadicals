@@ -11,9 +11,13 @@
 #import "cocos2d.h"
 
 // HelloWorldLayer
-@interface HelloWorldLayer : CCLayer
+@interface HelloWorldLayer : CCLayerColor
 {
+  CCSprite *_nucleus;
+  CCSprite *_electron;
 }
+@property (nonatomic, retain) CCSprite *electron;
+@property (nonatomic, retain) CCSprite *nucleus;
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;

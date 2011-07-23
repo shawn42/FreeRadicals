@@ -13,6 +13,11 @@
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
 
+@synthesize electron = _electron;
+@synthesize nucleus = _nucleus;
+
+
+
 +(CCScene *) scene
 {
 	// 'scene' is an autorelease object.
@@ -31,33 +36,45 @@
 // on "init" you need to initialize your instance
 -(id) init
 {
-	// always call "super" init
-	// Apple recommends to re-assign "self" with the "super" return value
-	if( (self=[super init])) {
-		
-		// create and initialize a Label
-		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:64];
+  if( (self=[super initWithColor:ccc4(25,25,25,255)] )) {
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    self.nucleus = [CCSprite spriteWithFile:@"nucleus.png" 
+                                           rect:CGRectMake(0, 0, 30, 26)];
+    self.nucleus.position = ccp(winSize.width/2, winSize.height/2);
+    
+    
+    self.electron = [CCSprite spriteWithFile:@"electron.png" 
+                                            rect:CGRectMake(0, 0, 10, 10)];
+    self.electron.position = ccp(self.nucleus.position.x+20, self.nucleus.position.y+20); 
+    
+    
+    [self addChild:self.nucleus];		
+    [self addChild:self.electron];		
+    
+    [self scheduleUpdate];
+  }
+  return self;
+}
 
-		// ask director the the window size
-		CGSize size = [[CCDirector sharedDirector] winSize];
-	
-		// position the label on the center of the screen
-		label.position =  ccp( size.width /2 , size.height/2 );
-		
-		// add the label as a child to this Layer
-		[self addChild: label];
-	}
-	return self;
+-(void) update: (ccTime) dt
+{
+  float speed = 140;
+  float shellSize = 10.0;
+  float shell = 2.0;
+
+  float moveRads = CC_DEGREES_TO_RADIANS(speed * dt);
+    
+  float rads = ccpToAngle(ccpSub(self.electron.position, self.nucleus.position));
+  rads -= moveRads;
+  
+  self.electron.position = ccpAdd(self.nucleus.position, ccp((shellSize * shell * cosf(rads)), (shellSize * shell * sinf(rads)))); 
 }
 
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
 {
-	// in case you have something to dealloc, do it in this method
-	// in this particular example nothing needs to be released.
-	// cocos2d will automatically release all the children (Label)
-	
-	// don't forget to call "super dealloc"
+  [_nucleus release];
+  [_electron release];
 	[super dealloc];
 }
 @end
