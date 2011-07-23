@@ -15,6 +15,7 @@
 
 @synthesize electron = _electron;
 @synthesize nucleus = _nucleus;
+@synthesize chargingSoundSource = _chargingSoundSource;
 @synthesize charging;
 @synthesize currentCharge;
 
@@ -38,6 +39,10 @@
 -(id) init
 {
   if( (self=[super initWithColor:ccc4(25,25,25,255)] )) {
+    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"background.wav"];
+    self.chargingSoundSource = [[SimpleAudioEngine sharedEngine] soundSourceForFile:@"atom_charge.wav"];
+    self.chargingSoundSource.looping = YES;
+    
     CGSize winSize = [[CCDirector sharedDirector] winSize];
     self.nucleus = [CCSprite spriteWithFile:@"nucleus.png" 
                                            rect:CGRectMake(0, 0, 30, 26)];
@@ -73,6 +78,7 @@
   
   if (CGRectContainsPoint(nucleusRect, location)) {
     self.charging = YES;
+    [self.chargingSoundSource play];
   }
   
   
@@ -82,6 +88,8 @@
   if (self.charging) {
     self.charging = NO;  
     NSLog(@"discharge %f", currentCharge);
+    [self.chargingSoundSource stop];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"electron_freed.wav"];
   }
 }
 
@@ -101,6 +109,7 @@
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
 {
+  [_chargingSoundSource release];
   [_nucleus release];
   [_electron release];
 	[super dealloc];

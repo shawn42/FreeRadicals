@@ -125,6 +125,9 @@
 		12BD0C8213DA0A310039ACAC /* nucleus.png in Resources */ = {isa = PBXBuildFile; fileRef = 12BD0C8013DA0A310039ACAC /* nucleus.png */; };
 		12BD0C8313DA0A310039ACAC /* electron.png in Resources */ = {isa = PBXBuildFile; fileRef = 12BD0C8113DA0A310039ACAC /* electron.png */; };
 		12BD0C8513DA0A7C0039ACAC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 12BD0C8413DA0A7C0039ACAC /* logo.png */; };
+		12F20C8413DB58EC00F719A6 /* atom_charge.wav in Resources */ = {isa = PBXBuildFile; fileRef = 12F20C8113DB58EC00F719A6 /* atom_charge.wav */; };
+		12F20C8513DB58EC00F719A6 /* background.wav in Resources */ = {isa = PBXBuildFile; fileRef = 12F20C8213DB58EC00F719A6 /* background.wav */; };
+		12F20C8613DB58EC00F719A6 /* electron_freed.wav in Resources */ = {isa = PBXBuildFile; fileRef = 12F20C8313DB58EC00F719A6 /* electron_freed.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -366,6 +369,9 @@
 		12BD0C8013DA0A310039ACAC /* nucleus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nucleus.png; sourceTree = "<group>"; };
 		12BD0C8113DA0A310039ACAC /* electron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = electron.png; sourceTree = "<group>"; };
 		12BD0C8413DA0A7C0039ACAC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		12F20C8113DB58EC00F719A6 /* atom_charge.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = atom_charge.wav; sourceTree = "<group>"; };
+		12F20C8213DB58EC00F719A6 /* background.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = background.wav; sourceTree = "<group>"; };
+		12F20C8313DB58EC00F719A6 /* electron_freed.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = electron_freed.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,6 +445,9 @@
 		12BD0B2013DA062C0039ACAC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				12F20C8113DB58EC00F719A6 /* atom_charge.wav */,
+				12F20C8213DB58EC00F719A6 /* background.wav */,
+				12F20C8313DB58EC00F719A6 /* electron_freed.wav */,
 				12BD0C8413DA0A7C0039ACAC /* logo.png */,
 				12BD0C8013DA0A310039ACAC /* nucleus.png */,
 				12BD0C8113DA0A310039ACAC /* electron.png */,
@@ -826,6 +835,9 @@
 				12BD0C8213DA0A310039ACAC /* nucleus.png in Resources */,
 				12BD0C8313DA0A310039ACAC /* electron.png in Resources */,
 				12BD0C8513DA0A7C0039ACAC /* logo.png in Resources */,
+				12F20C8413DB58EC00F719A6 /* atom_charge.wav in Resources */,
+				12F20C8513DB58EC00F719A6 /* background.wav in Resources */,
+				12F20C8613DB58EC00F719A6 /* electron_freed.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1027,6 +1039,7 @@
 				12BD0C7F13DA06300039ACAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
