@@ -90,6 +90,9 @@
     NSLog(@"discharge %f", currentCharge);
     [self.chargingSoundSource stop];
     [[SimpleAudioEngine sharedEngine] playEffect:@"electron_freed.wav"];
+    
+    // XXX: reminder of how to remove children.
+    [self removeChild:self.electron cleanup:YES];	
   }
 }
 
