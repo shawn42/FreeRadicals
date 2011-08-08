@@ -20,8 +20,8 @@
 }
 
 - (void)dealloc {
-  [_nucleus dealloc];
-  [_electrons dealloc];
+  [_nucleus release];
+  [_electrons release];
 	[super dealloc];
 }
 
