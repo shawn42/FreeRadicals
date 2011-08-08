@@ -8,10 +8,10 @@
 
 
 // Import the interfaces
-#import "HelloWorldLayer.h"
+#import "GameplayLayer.h"
 
 // HelloWorldLayer implementation
-@implementation HelloWorldLayer
+@implementation GameplayLayer
 
 @synthesize electron = _electron;
 @synthesize nucleus = _nucleus;
@@ -26,7 +26,7 @@
 	CCScene *scene = [CCScene node];
 	
 	// 'layer' is an autorelease object.
-	HelloWorldLayer *layer = [HelloWorldLayer node];
+	GameplayLayer *layer = [GameplayLayer node];
 	
 	// add layer as a child to scene
 	[scene addChild: layer];

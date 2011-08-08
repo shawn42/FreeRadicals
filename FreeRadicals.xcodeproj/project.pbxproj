@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1230874C13F0450A0078A135 /* Molecule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1230874B13F0450A0078A135 /* Molecule.m */; };
+		12B7BDFA13EB255C00065975 /* Electron.m in Sources */ = {isa = PBXBuildFile; fileRef = 12B7BDF913EB255C00065975 /* Electron.m */; };
 		12BD0B1013DA062C0039ACAC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12BD0B0F13DA062C0039ACAC /* QuartzCore.framework */; };
 		12BD0B1213DA062C0039ACAC /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12BD0B1113DA062C0039ACAC /* OpenGLES.framework */; };
 		12BD0B1413DA062C0039ACAC /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12BD0B1313DA062C0039ACAC /* OpenAL.framework */; };
@@ -121,7 +123,7 @@
 		12BD0C7013DA06300039ACAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BD0C6F13DA06300039ACAC /* main.m */; };
 		12BD0C7313DA06300039ACAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BD0C7213DA06300039ACAC /* AppDelegate.m */; };
 		12BD0C7613DA06300039ACAC /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BD0C7513DA06300039ACAC /* RootViewController.m */; };
-		12BD0C7913DA06300039ACAC /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BD0C7813DA06300039ACAC /* HelloWorldLayer.m */; };
+		12BD0C7913DA06300039ACAC /* GameplayLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 12BD0C7813DA06300039ACAC /* GameplayLayer.m */; };
 		12BD0C8213DA0A310039ACAC /* nucleus.png in Resources */ = {isa = PBXBuildFile; fileRef = 12BD0C8013DA0A310039ACAC /* nucleus.png */; };
 		12BD0C8313DA0A310039ACAC /* electron.png in Resources */ = {isa = PBXBuildFile; fileRef = 12BD0C8113DA0A310039ACAC /* electron.png */; };
 		12BD0C8513DA0A7C0039ACAC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 12BD0C8413DA0A7C0039ACAC /* logo.png */; };
@@ -131,6 +133,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1230874A13F0450A0078A135 /* Molecule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Molecule.h; sourceTree = "<group>"; };
+		1230874B13F0450A0078A135 /* Molecule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Molecule.m; sourceTree = "<group>"; };
+		12B7BDF813EB255C00065975 /* Electron.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Electron.h; sourceTree = "<group>"; };
+		12B7BDF913EB255C00065975 /* Electron.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Electron.m; sourceTree = "<group>"; };
 		12BD0B0B13DA062C0039ACAC /* FreeRadicals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeRadicals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12BD0B0F13DA062C0039ACAC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		12BD0B1113DA062C0039ACAC /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -363,8 +369,8 @@
 		12BD0C7213DA06300039ACAC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		12BD0C7413DA06300039ACAC /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		12BD0C7513DA06300039ACAC /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		12BD0C7713DA06300039ACAC /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		12BD0C7813DA06300039ACAC /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
+		12BD0C7713DA06300039ACAC /* GameplayLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameplayLayer.h; sourceTree = "<group>"; };
+		12BD0C7813DA06300039ACAC /* GameplayLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameplayLayer.m; sourceTree = "<group>"; };
 		12BD0C7A13DA06300039ACAC /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		12BD0C8013DA0A310039ACAC /* nucleus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nucleus.png; sourceTree = "<group>"; };
 		12BD0C8113DA0A310039ACAC /* electron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = electron.png; sourceTree = "<group>"; };
@@ -432,9 +438,13 @@
 				12BD0C7213DA06300039ACAC /* AppDelegate.m */,
 				12BD0C7413DA06300039ACAC /* RootViewController.h */,
 				12BD0C7513DA06300039ACAC /* RootViewController.m */,
-				12BD0C7713DA06300039ACAC /* HelloWorldLayer.h */,
-				12BD0C7813DA06300039ACAC /* HelloWorldLayer.m */,
+				1230874A13F0450A0078A135 /* Molecule.h */,
+				1230874B13F0450A0078A135 /* Molecule.m */,
+				12BD0C7713DA06300039ACAC /* GameplayLayer.h */,
+				12BD0C7813DA06300039ACAC /* GameplayLayer.m */,
 				12BD0C7A13DA06300039ACAC /* GameConfig.h */,
+				12B7BDF813EB255C00065975 /* Electron.h */,
+				12B7BDF913EB255C00065975 /* Electron.m */,
 				12BD0B2013DA062C0039ACAC /* Resources */,
 				12BD0B3413DA062D0039ACAC /* libs */,
 				12BD0C6D13DA06300039ACAC /* Supporting Files */,
@@ -945,7 +955,9 @@
 				12BD0C7013DA06300039ACAC /* main.m in Sources */,
 				12BD0C7313DA06300039ACAC /* AppDelegate.m in Sources */,
 				12BD0C7613DA06300039ACAC /* RootViewController.m in Sources */,
-				12BD0C7913DA06300039ACAC /* HelloWorldLayer.m in Sources */,
+				12BD0C7913DA06300039ACAC /* GameplayLayer.m in Sources */,
+				12B7BDFA13EB255C00065975 /* Electron.m in Sources */,
+				1230874C13F0450A0078A135 /* Molecule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
